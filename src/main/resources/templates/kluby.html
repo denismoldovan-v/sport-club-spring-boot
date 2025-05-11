@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kluby</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+</head>
+<body class="bg-light">
+<!-- Navbar Fragment -->
+<header th:replace="fragments/navbar :: navbar"></header>
+
+<!-- Main Content -->
+<main class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h1 class="card-title">Welcome to Kluby</h1>
+        </div>
+        <div class="card-body">
+            <p class="text-muted text-center mb-4">Here you can manage and view all the clubs.</p>
+
+            <!-- Clubs Table -->
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-primary">
+                    <tr>
+                        <th>Club Name</th>
+                        <th>Email</th>
+                        <th>Founded On</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Loop Through Kluby -->
+                    <tr th:each="klub : ${kluby}">
+                        <td th:text="${klub.nazwa}">Sample Club</td>
+                        <td th:text="${klub.email}">sample@example.com</td>
+                        <td th:text="${#dates.format(klub.dataZalozenia, 'yyyy-MM-dd')}">2023-01-01</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Klub Lekkoatletyczny. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

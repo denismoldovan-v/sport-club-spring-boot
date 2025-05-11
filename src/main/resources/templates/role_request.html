@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Request Role Upgrade</title>
+</head>
+<body>
+<h1>Request Role Upgrade</h1>
+<form th:action="@{/role-upgrade}" method="post">
+  <label for="requestedRole">Requested Role:</label>
+  <select id="requestedRole" name="requestedRole">
+    <option value="ROLE_ADMIN">Admin</option>
+    <option value="ROLE_MANAGER">Manager</option>
+  </select>
+  <br>
+  <button type="submit">Submit Request</button>
+</form>
+</body>
+</html>

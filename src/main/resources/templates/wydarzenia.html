@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wydarzenia Sportowe</title>
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/wydarzenia.css">
+</head>
+<body>
+<!-- Navigation -->
+<header th:replace="fragments/navbar :: navbar"></header>
+<!-- Hero Section -->
+<header class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">Wydarzenia Sportowe</h1>
+        <p class="lead">Poznaj wszystkie nadchodzące i przeszłe wydarzenia sportowe naszego klubu.</p>
+    </div>
+</header>
+
+<!-- Events Section -->
+<main class="container mt-5">
+    <section>
+        <h2 class="text-center mb-4">Lista Wydarzeń</h2>
+        <div id="events-container" class="row gy-4"></div>
+
+        <!-- Pagination Controls -->
+        <nav aria-label="Pagination" class="mt-4">
+            <ul id="pagination-container" class="pagination justify-content-center"></ul>
+        </nav>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 Klub Lekkoatletyczny. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/wydarzenia.js"></script>
+</body>
+</html>

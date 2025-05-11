@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            width: 400px; /* Increased width */
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+        p.error {
+            color: red;
+        }
+        p.success {
+            color: green;
+        }
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .register-link p {
+            color: black; /* Changed color */
+            font-size: 14px;
+        }
+        .register-link a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h1>Login</h1>
+    <form id="login-form" method="POST" th:action="@{/perform_login}">
+        <fieldset>
+            <legend>Login Credentials</legend>
+            <label for="username">Username:</label>
+            <input id="username" name="username" type="text" autocomplete="username" required />
+
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+        </fieldset>
+        <button type="submit">Log in</button>
+    </form>
+
+    <!-- Error or success messages -->
+    <p th:if="${param.error}" class="error">Invalid username or password.</p>
+    <p th:if="${param.logout}" class="success">You have been logged out successfully.</p>
+
+    <!-- Registration prompt -->
+    <div class="register-link">
+        <p>Don't have an account yet? <a th:href="@{/register}">Register here</a>.</p>
+    </div>
+</div>
+</body>
+</html>

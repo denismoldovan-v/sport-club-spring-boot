@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            width: 400px; /* Consistent width as login page */
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745; /* Green for Register button */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+        p.error {
+            color: red;
+        }
+        p.success {
+            color: green;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .login-link p {
+            color: black; /* Black text for better readability */
+            font-size: 14px;
+        }
+        .login-link a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h1>Register</h1>
+    <form th:action="@{/register}" method="post">
+        <fieldset>
+            <legend>Registration Details</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </fieldset>
+        <button type="submit">Register</button>
+    </form>
+
+    <!-- Error or success messages -->
+    <p th:if="${error}" class="error">[[${error}]]</p>
+    <p th:if="${success}" class="success">[[${success}]]</p>
+
+    <!-- Login prompt -->
+    <div class="login-link">
+        <p>Have an account already? <a th:href="@{/login}">Log in here</a>.</p>
+    </div>
+</div>
+</body>
+</html>

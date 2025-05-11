@@ -1,0 +1,82 @@
+/* Custom CSS for Klub Lekkoatletyczny */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+main {
+    flex-grow: 1; /* Allow the main content to take up available space */
+}
+
+footer {
+    background-color: #343a40;
+    color: #adb5bd;
+    margin-top: auto; /* Push footer to the bottom */
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    padding: 3rem 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.25rem;
+}
+
+footer {
+    background-color: #343a40;
+    color: #adb5bd;
+}
+
+footer p {
+    margin: 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination .page-link {
+    color: #007bff;
+}
+
+.pagination .page-link:hover {
+    color: #0056b3;
+}
+
+.pagination .active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
